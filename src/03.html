@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>::first-line</title>
+  <style>
+  input {
+    color: #04D6D6;
+  }
+
+  input::first-line {
+    color: #333;
+  }
+
+  /* 对于不支持::first-line方法的浏览器，相关CSS会污染正常的样式表现，因此我们需要区分处理，例如可以这样： */
+  input,
+  input::first-line {
+    color: #333;
+  }
+
+  @supports (-webkit-mask: none) {
+    input {
+      color: red;
+    }
+  }
+  /*************************/
+
+  textarea {
+    caret-color: red;
+  }
+
+  textarea::first-line {
+    color: #333;
+  }
+
+  </style>
+</head>
+
+<body>
+  <input type="text" />
+  <textarea></textarea>
+</body>
+
+</html>
